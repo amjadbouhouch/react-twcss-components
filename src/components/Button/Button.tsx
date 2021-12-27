@@ -1,13 +1,3 @@
-/*
- *
- * Project: winshot-crm
- * File Created: 05 August 2021 13:16
- * Author: Bouhouch Amjed (amjedbouhouch@gmail.com)
- * -----
- * Last Modified: 08 October 2021 08:40
- * -----
- * Copyright 2021
- */
 import React, { forwardRef, useMemo } from "react";
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
   loading?: boolean;
