@@ -1,17 +1,34 @@
 {
   "name": "react-twcss-components",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React components build with Tailwincss",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amjadbouhouch/react-twcss-components"
+  },
+  "homepage": "https://github.com/amjadbouhouch/react-twcss-components",
+  "keywords": [
+    "react",
+    "tailwindcss",
+    "react-tailwindcss",
+    "component",
+    "react-component"
+  ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ts": "tsc",
-    "build": "rm -rf dist && rollup -c",
+    "build": "NODE_ENV=production rm -rf dist && rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "Bouhouch Amjed",
+  "author": "Bouhouch Amjed <amjedbouhouch@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.5",

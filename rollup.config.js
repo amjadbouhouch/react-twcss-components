@@ -5,18 +5,24 @@ import external from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 import visualizer from "rollup-plugin-visualizer";
+import pkg from "./package.json";
 export default [
   {
     input: "./src/index.ts",
     output: [
       {
-        dir: "dist",
-        format: "esm",
-        preserveModules: true,
-        preserveModulesRoot: "src",
+        file: pkg.main,
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: pkg.module,
+        format: "es",
         sourcemap: true,
       },
     ],
+
+    external: [...Object.keys(pkg.peerDependencies || {})],
     plugins: [
       babel({
         exclude: "node_module/**",
@@ -51,6 +57,5 @@ export default [
         declarationDir: "dist",
       }),
     ],
-    external: ["react", "react-dom", "tailwindcss"],
   },
 ];

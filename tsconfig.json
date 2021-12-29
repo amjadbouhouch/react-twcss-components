@@ -12,13 +12,7 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "esModuleInterop": true,
-    "baseUrl": "src/",
-    "paths": {
-      "common": ["src/common/*"],
-      "components": ["src/components/*"],
-      "hooks": ["src/hooks/*"],
-      "utils": ["src/utils/*"]
-    }
+    "baseUrl": "src/"
   },
   "exclude": [
     "node_modules",

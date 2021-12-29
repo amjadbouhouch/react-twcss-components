@@ -28,3 +28,4 @@ markdown-text.md
 .env.*
 issues.md
 # firebase*
+*.tgz
