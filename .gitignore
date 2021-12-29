@@ -7,7 +7,7 @@
 /lib
 # testing
 /coverage
-
+bundle-analysis.html
 # production
 /build
 /documentation
