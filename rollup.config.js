@@ -5,6 +5,7 @@ import external from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 import visualizer from "rollup-plugin-visualizer";
+import dts from "rollup-plugin-dts";
 import pkg from "./package.json";
 export default [
   {
@@ -17,7 +18,7 @@ export default [
       },
       {
         file: pkg.module,
-        format: "es",
+        format: "esm",
         sourcemap: true,
       },
     ],
@@ -57,5 +58,10 @@ export default [
         declarationDir: "dist",
       }),
     ],
+  },
+  {
+    input: "./dist/esm/dist/index.d.ts",
+    output: [{ file: "./dist/index.d.ts", format: "esm" }],
+    plugins: [dts()],
   },
 ];

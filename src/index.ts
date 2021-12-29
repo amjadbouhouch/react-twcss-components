@@ -1,4 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("./index.css");
-}
+/** should be commented in mode production */
+// import "./index.css"
 export * from "./components";
