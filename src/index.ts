@@ -1,3 +1,3 @@
 /** should be commented in mode production */
-// import "./index.css";
+import "./index.css";
 export * from "./components";
