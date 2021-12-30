@@ -1,9 +1,24 @@
 import React, { forwardRef, useMemo } from "react";
 export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+  /**
+   * is Loading
+   */
   loading?: boolean;
+  /**
+   * Take full space of the parent
+   */
   full?: boolean;
+  /**
+   * is disabled
+   */
   disabled?: boolean;
+  /**
+   * Should be rounded corner
+   */
   rounded?: boolean;
+  /**
+   * mode variant: default to primary
+   */
   mode?:
     | "danger"
     | "success"
@@ -11,10 +26,25 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     | "secondary"
     | "primary"
     | undefined;
-  size?: "small" | "medium" | "large";
+  /**
+   * Size of the button
+   */
+  size?: "small" | "medium";
+  /**
+   * extra classNames
+   */
   className?: string;
+  /**
+   * React.Node
+   */
   children?: React.ReactNode;
+  /**
+   * icon as React.ReactNode
+   */
   icon?: React.ReactNode;
+  /**
+   * Background will be white and the border well be colored.
+   */
   outline?: boolean;
 }
 /**
