@@ -69,7 +69,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 
   const classSizes = useMemo(() => {
     if (!props.children) return "px-2 py-1";
-    return size === "medium" ? "px-4 py-2" : "px-2 py-1";
+    return size === "medium" ? "px-4 py-2" : "px-3 py-1 rounded-md text-sm";
   }, [size, props.children]);
   const modeClasses = useMemo(() => {
     if (mode === "danger") {
