@@ -1,15 +1,32 @@
-### react-twcss-components
+# react-twcss-components
 
-## Components
+A React Component Library Based on Tailwind CSS
 
-1. Button ✅
-2. Input
-3. Select
-4. Multi-Select
-5. Modal
-6. Confirm Modal
-7. Notification
-8. NavLink
-9. BreadCrumb
-10. Card
-11.
+## 🚀 Usage
+
+Install
+
+```sh
+npm i react-twcss-components
+```
+
+Use components inside your project
+
+```js
+import { Button } from "react-twcss-components";
+
+function App() {
+  return <Button>Hi there!</Button>;
+}
+
+export default App;
+```
+
+## 🚀 Development
+
+- Fork
+- Clone
+- `npm install`
+- `npm run storybook`
+
+It will start a local server at `localhost:6006` with all components rendered.
