@@ -1,6 +1,6 @@
 {
   "name": "react-twcss-components",
-  "version": "0.2.2",
+  "version": "0.3.2",
   "description": "A React Component Library Based on Tailwind CSS",
   "source": "src/index.ts",
   "main": "dist/cjs/index.js",
