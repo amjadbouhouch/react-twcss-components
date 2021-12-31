@@ -4,6 +4,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import external from "rollup-plugin-peer-deps-external";
 import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import replace from "@rollup/plugin-replace";
 import visualizer from "rollup-plugin-visualizer";
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json";
@@ -23,11 +25,20 @@ export default [
       },
     ],
 
-    external: [...Object.keys(pkg.peerDependencies || {})],
+    external: [...Object.keys(pkg.peerDependencies || {}), "react-mentions"],
     plugins: [
+      replace({
+        "process.env.NODE_ENV": JSON.stringify("production"),
+        preventAssignment: true,
+      }),
       babel({
-        exclude: "node_module/**",
+        // exclude: "node_module/**",
         presets: ["@babel/preset-react"],
+      }),
+      nodeResolve({
+        // use "jsnext:main" if possible
+        // see https://github.com/rollup/rollup/wiki/jsnext:main
+        jsnext: true,
       }),
       postcss({
         // extensions: ['css', '.less'],
